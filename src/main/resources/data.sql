@@ -1,6 +1,7 @@
 	drop table if exists asignado;
 	drop table if exists cientificos;
 	drop table if exists proyecto;
+	drop table if exists usuario;
 	
 	create table proyectos (
 	id varchar(4) primary key, 
@@ -23,6 +24,13 @@
 	foreign key(proyecto) references proyectos(id)
 	on delete cascade
 	on update cascade
+	);
+	
+	create table usuario (
+	id int primary key auto_increment,
+	username varchar (300),
+	password varchar (300),
+	role varchar (300)
 	);
 	
 	insert into proyectos values
